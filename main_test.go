@@ -41,43 +41,43 @@ var _ = Describe("go_submodule", func() {
 		Ω(err).ShouldNot(HaveOccurred())
 		Eventually(session.Out).Should(gbytes.Say(`mkdir -p github.com/ryanuber
 pushd github.com/ryanuber
-  git submodule add https://github.com/ryanuber/go-glob.git
+  git submodule add -f https://github.com/ryanuber/go-glob.git
   cd go-glob
   git checkout master
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/docker
 pushd github.com/docker
-  git submodule add https://github.com/containous/leadership.git
+  git submodule add -f https://github.com/containous/leadership.git
   cd leadership
   git checkout master
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/cenk
 pushd github.com/cenk
-  git submodule add https://github.com/cenk/backoff.git
+  git submodule add -f https://github.com/cenk/backoff.git
   cd backoff
   git checkout master
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/abbot
 pushd github.com/abbot
-  git submodule add https://github.com/containous/go-http-auth.git
+  git submodule add -f https://github.com/containous/go-http-auth.git
   cd go-http-auth
   git checkout containous-fork
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/mailgun
 pushd github.com/mailgun
-  git submodule add https://github.com/mailgun/timetools.git
+  git submodule add -f https://github.com/mailgun/timetools.git
   cd timetools
   git checkout 7e6055773c5137efbeb3bd2410d705fe10ab6bfd
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/eapache
 pushd github.com/eapache
-  git submodule add https://github.com/eapache/channels.git
+  git submodule add -f https://github.com/eapache/channels.git
   cd channels
   git checkout v1.1.0
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/mesosphere
 pushd github.com/mesosphere
-  git submodule add https://github.com/containous/mesos-dns.git.git
+  git submodule add -f https://github.com/containous/mesos-dns.git.git
 popd`))
 		Eventually(session.Err).Should(gbytes.Say(""))
 	})

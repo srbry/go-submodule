@@ -77,7 +77,7 @@ func parseToml(c *cli.Context) error {
 			gitSource = dep.Source
 		}
 		gitSource = strings.Replace(gitSource, "https://", "", -1)
-		fmt.Printf("  git submodule add https://%s.git\n", gitSource)
+		fmt.Printf("  git submodule add -f https://%s.git\n", gitSource)
 		checkout := checkoutString(dep)
 		if checkout != "" {
 			fmt.Printf("  cd %s\n", filePath[len(filePath)-1])
