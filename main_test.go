@@ -73,7 +73,7 @@ popd`))
 pushd github.com/eapache
   git submodule add https://github.com/eapache/channels.git
   cd channels
-  git checkout 1.1.0
+  git checkout v1.1.0
 popd`))
 		Eventually(string(session.Out.Contents())).Should(ContainSubstring(`mkdir -p github.com/mesosphere
 pushd github.com/mesosphere

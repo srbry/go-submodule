@@ -94,7 +94,7 @@ func checkoutString(dep rawProject) string {
 		checkout = dep.Branch
 	}
 	if dep.Version != "" {
-		checkout = dep.Version
+		checkout = fmt.Sprintf("v%s", dep.Version)
 	}
 	if dep.Revision != "" {
 		checkout = dep.Revision
